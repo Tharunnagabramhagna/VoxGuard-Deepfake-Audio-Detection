@@ -1,0 +1,2 @@
+# Keep directory structure in Git while ignoring trained model checkpoints (*.pt, *.pth, *.bin)
+

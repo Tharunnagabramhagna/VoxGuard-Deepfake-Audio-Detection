@@ -1,0 +1,86 @@
+{
+  "model_name": "VoxGuard-MLAAD-ResNetBiGRU-FineTuned",
+  "base_pretrained_model": "https://huggingface.co/koyelog/deepfake-voice-detector-sota",
+  "base_architecture": "ResNet-18 Front-End + BiGRU (2-layer, 512) + Multi-Head Self-Attention (8 heads) + MLP Head",
+  "base_checkpoint_file": "checkpoints/real_speech/wav2vec2_deepfake_detector/pytorch_model.pth",
+  "base_license": "Apache-2.0",
+  "adaptation_dataset": "MLAAD-tiny (mueller91/MLAAD-tiny)",
+  "dataset_license": "CC BY-NC 4.0 (Synthetic), M-AILABS License (Genuine)",
+  "train_manifest": "data/manifests/mlaad_train.json",
+  "dev_manifest": "data/manifests/mlaad_dev.json",
+  "test_manifest": "data/manifests/mlaad_test.json",
+  "sample_counts": {
+    "train_total": 1400,
+    "train_bonafide": 700,
+    "train_spoof": 700,
+    "dev_total": 300,
+    "dev_bonafide": 150,
+    "dev_spoof": 150,
+    "test_total": 300,
+    "test_bonafide": 150,
+    "test_spoof": 150
+  },
+  "speaker_partitioning": {
+    "train_speaker": "Elizabeth Klett (female, Wives and Daughters)",
+    "dev_speaker": "Mary Ann (female, The Midnight Passenger)",
+    "test_speaker": "Elliot Miller (male, The Poisoned Pen)",
+    "speaker_leakage": "0.0% (strictly disjoint speakers across splits)"
+  },
+  "generator_partitioning": {
+    "train_generators": [
+      "Edge-TTS",
+      "FishTTS",
+      "Chatterbox",
+      "DeepGram",
+      "Indri-TTS-0.1",
+      "Llasa-1B-Multilingual",
+      "ZipVoice",
+      "Openaudio-S1-Mini",
+      "Veena",
+      "griffin_lim"
+    ],
+    "dev_generators": [
+      "Higgs-Audio-V2",
+      "Index-TTS-1.5"
+    ],
+    "test_seen_generators": [
+      "Edge-TTS",
+      "FishTTS",
+      "Chatterbox",
+      "DeepGram",
+      "ZipVoice"
+    ],
+    "test_unseen_generators": [
+      "Cartesia.ai (Sonic-3)",
+      "Mars5",
+      "MatchaTTS"
+    ]
+  },
+  "training_configuration": {
+    "frozen_layers": "conv1, bn1, layer1, layer2, layer3 (2,776,512 parameters)",
+    "trainable_layers": "gru, attention, classifier (3,352,577 parameters)",
+    "batch_size": 2,
+    "learning_rate": 5e-05,
+    "weight_decay": 0.01,
+    "optimizer": "AdamW",
+    "loss_function": "BCEWithLogitsLoss",
+    "seed": 42,
+    "early_stopping_patience": 3,
+    "best_epoch": 1,
+    "best_dev_loss": 0.7689,
+    "best_dev_acc": 0.5433,
+    "best_dev_eer": 0.39
+  },
+  "training_timestamp": "2026-10-31 02:00:43",
+  "hardware_environment": {
+    "python": "3.13.7",
+    "pytorch": "2.15.0+cpu",
+    "cpu_cores": 14,
+    "device": "CPU"
+  },
+  "limitations": [
+    "Trained on 4.0-second 16 kHz standardized audio. Performance on compressed telephony, short clips (<1.0s), or noisy environments may degrade.",
+    "Evaluation is limited to MLAAD-tiny English speech and does not prove universal detection of all AI voice generators.",
+    "Commercial use is restricted by MLAAD-tiny non-commercial license (CC BY-NC 4.0)."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "total_records": 90,
+  "class_distribution": {
+    "train": {
+      "bonafide": 10,
+      "spoof": 20
+    },
+    "dev": {
+      "bonafide": 10,
+      "spoof": 20
+    },
+    "eval": {
+      "bonafide": 10,
+      "spoof": 20
+    }
+  },
+  "speaker_disjoint": true,
+  "no_cross_partition_duplicates": true,
+  "partition_counts": {
+    "train": 30,
+    "dev": 30,
+    "eval": 30
+  }
+}

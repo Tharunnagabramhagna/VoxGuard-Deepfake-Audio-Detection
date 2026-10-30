@@ -1,0 +1,91 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# C extensions
+*.pyd
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Audio and Dataset files (Strictly exclude raw/processed audio from Git)
+data/raw/
+data/processed/
+data/cache/
+data/asvspoof/
+data/cd_add/
+tests/fixtures/
+*.flac
+*.wav
+*.mp3
+*.m4a
+*.ogg
+*.aac
+*.tar
+*.tar.gz
+*.zip
+*.7z
+
+# Cache & intermediate numpy / tensor matrices
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+
+# Checkpoints: Exclude oversized external weights (>50 MB) and training recovery checkpoints
+checkpoints/real_speech/wav2vec2_deepfake_detector/pytorch_model.pth
+checkpoints/real_speech/voxguard_mlaad_finetuned/latest_checkpoint.pt
+
+# Experiment logs and tracking
+runs/
+wandb/
+.tensorboard/
+*.log
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IDE and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Testing caches
+.pytest_cache/
+.coverage
+htmlcov/

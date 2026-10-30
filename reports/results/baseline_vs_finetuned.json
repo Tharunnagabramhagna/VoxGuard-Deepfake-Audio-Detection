@@ -1,0 +1,212 @@
+{
+  "evaluation_timestamp": "2026-10-31 02:09:19",
+  "test_dataset": "MLAAD-tiny (English, Elliot Miller speaker held out)",
+  "sample_count": 300,
+  "default_threshold_0_5": {
+    "accuracy": {
+      "name": "Accuracy",
+      "original_pretrained": 0.5867,
+      "fine_tuned": 0.6667,
+      "difference": 0.08
+    },
+    "precision": {
+      "name": "Precision",
+      "original_pretrained": 0.9333,
+      "fine_tuned": 0.8676,
+      "difference": -0.0657
+    },
+    "recall": {
+      "name": "Recall",
+      "original_pretrained": 0.1867,
+      "fine_tuned": 0.3933,
+      "difference": 0.2066
+    },
+    "f1_score": {
+      "name": "F1-Score",
+      "original_pretrained": 0.3111,
+      "fine_tuned": 0.5413,
+      "difference": 0.2302
+    },
+    "roc_auc": {
+      "name": "ROC-AUC",
+      "original_pretrained": 0.6958,
+      "fine_tuned": 0.6948,
+      "difference": -0.001
+    },
+    "eer": {
+      "name": "EER",
+      "original_pretrained": 0.3533,
+      "fine_tuned": 0.3667,
+      "difference": 0.0134
+    },
+    "false_positive_rate": {
+      "name": "False Positive Rate",
+      "original_pretrained": 0.0133,
+      "fine_tuned": 0.06,
+      "difference": 0.0467
+    },
+    "false_negative_rate": {
+      "name": "False Negative Rate",
+      "original_pretrained": 0.8133,
+      "fine_tuned": 0.6067,
+      "difference": -0.2066
+    }
+  },
+  "dev_calibrated_threshold": {
+    "baseline_threshold": 0.0758,
+    "finetuned_threshold": 0.2777,
+    "metrics": {
+      "accuracy": {
+        "name": "Accuracy",
+        "original_pretrained": 0.6333,
+        "fine_tuned": 0.63,
+        "difference": -0.0033
+      },
+      "precision": {
+        "name": "Precision",
+        "original_pretrained": 0.6235,
+        "fine_tuned": 0.6168,
+        "difference": -0.0067
+      },
+      "recall": {
+        "name": "Recall",
+        "original_pretrained": 0.6733,
+        "fine_tuned": 0.6867,
+        "difference": 0.0134
+      },
+      "f1_score": {
+        "name": "F1-Score",
+        "original_pretrained": 0.6474,
+        "fine_tuned": 0.6498,
+        "difference": 0.0024
+      },
+      "roc_auc": {
+        "name": "ROC-AUC",
+        "original_pretrained": 0.6958,
+        "fine_tuned": 0.6948,
+        "difference": -0.001
+      },
+      "eer": {
+        "name": "EER",
+        "original_pretrained": 0.3533,
+        "fine_tuned": 0.3667,
+        "difference": 0.0134
+      },
+      "false_positive_rate": {
+        "name": "False Positive Rate",
+        "original_pretrained": 0.4067,
+        "fine_tuned": 0.4267,
+        "difference": 0.02
+      },
+      "false_negative_rate": {
+        "name": "False Negative Rate",
+        "original_pretrained": 0.3267,
+        "fine_tuned": 0.3133,
+        "difference": -0.0134
+      }
+    }
+  },
+  "status_breakdown": {
+    "human": {
+      "baseline_accuracy": 0.9867,
+      "finetuned_accuracy": 0.94,
+      "difference": -0.0467,
+      "total_samples": 150
+    },
+    "seen_generator": {
+      "baseline_accuracy": 0.1733,
+      "finetuned_accuracy": 0.36,
+      "difference": 0.1867,
+      "total_samples": 75
+    },
+    "unseen_generator": {
+      "baseline_accuracy": 0.2,
+      "finetuned_accuracy": 0.4267,
+      "difference": 0.2267,
+      "total_samples": 75
+    }
+  },
+  "per_generator_comparison": {
+    "Cartesia.ai (Sonic-3)": {
+      "system_id": "Cartesia.ai (Sonic-3)",
+      "generator_status": "unseen_generator",
+      "total_samples": 25,
+      "baseline_accuracy": 0.2,
+      "finetuned_accuracy": 0.48,
+      "difference": 0.28,
+      "finetuned_mean_prob_fake": 0.4634
+    },
+    "Chatterbox": {
+      "system_id": "Chatterbox",
+      "generator_status": "seen_generator",
+      "total_samples": 15,
+      "baseline_accuracy": 0.0,
+      "finetuned_accuracy": 0.1333,
+      "difference": 0.1333,
+      "finetuned_mean_prob_fake": 0.3211
+    },
+    "DeepGram": {
+      "system_id": "DeepGram",
+      "generator_status": "seen_generator",
+      "total_samples": 15,
+      "baseline_accuracy": 0.2667,
+      "finetuned_accuracy": 0.5333,
+      "difference": 0.2666,
+      "finetuned_mean_prob_fake": 0.5663
+    },
+    "Edge-TTS": {
+      "system_id": "Edge-TTS",
+      "generator_status": "seen_generator",
+      "total_samples": 15,
+      "baseline_accuracy": 0.4667,
+      "finetuned_accuracy": 0.7333,
+      "difference": 0.2666,
+      "finetuned_mean_prob_fake": 0.6622
+    },
+    "FishTTS": {
+      "system_id": "FishTTS",
+      "generator_status": "seen_generator",
+      "total_samples": 15,
+      "baseline_accuracy": 0.0,
+      "finetuned_accuracy": 0.0,
+      "difference": 0.0,
+      "finetuned_mean_prob_fake": 0.1804
+    },
+    "Mars5": {
+      "system_id": "Mars5",
+      "generator_status": "unseen_generator",
+      "total_samples": 25,
+      "baseline_accuracy": 0.0,
+      "finetuned_accuracy": 0.12,
+      "difference": 0.12,
+      "finetuned_mean_prob_fake": 0.305
+    },
+    "MatchaTTS": {
+      "system_id": "MatchaTTS",
+      "generator_status": "unseen_generator",
+      "total_samples": 25,
+      "baseline_accuracy": 0.4,
+      "finetuned_accuracy": 0.68,
+      "difference": 0.28,
+      "finetuned_mean_prob_fake": 0.6445
+    },
+    "ZipVoice": {
+      "system_id": "ZipVoice",
+      "generator_status": "seen_generator",
+      "total_samples": 15,
+      "baseline_accuracy": 0.1333,
+      "finetuned_accuracy": 0.4,
+      "difference": 0.2667,
+      "finetuned_mean_prob_fake": 0.4616
+    },
+    "human_bonafide": {
+      "system_id": "human_bonafide",
+      "generator_status": "human",
+      "total_samples": 150,
+      "baseline_accuracy": 0.9867,
+      "finetuned_accuracy": 0.94,
+      "difference": -0.0467,
+      "finetuned_mean_prob_fake": 0.2872
+    }
+  }
+}

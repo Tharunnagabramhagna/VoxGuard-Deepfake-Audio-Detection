@@ -1,0 +1,7 @@
+dataset_mode,audio_reality,benchmark,model,sample_count,accuracy,precision,recall,f1,roc_auc,eer_percent,operating_threshold
+synthetic_fixture,procedurally_generated_sine_noise_fixture,synthetic_fixture_internal_eval,logistic_regression,30,0.26666666666666666,0.4375,0.35,0.3888888888888889,0.11499999999999999,85.0,0.3902683407068253
+synthetic_fixture,procedurally_generated_sine_noise_fixture,synthetic_fixture_internal_eval,random_forest,30,0.16666666666666666,0.2727272727272727,0.15,0.1935483870967742,0.14499999999999996,80.0,0.5545555555555557
+synthetic_fixture,procedurally_generated_sine_noise_fixture,synthetic_fixture_internal_eval,spectrogram_cnn,30,0.3,0.45454545454545453,0.25,0.3225806451612903,0.285,65.0,0.4603703245520592
+synthetic_fixture,procedurally_generated_sine_noise_fixture,synthetic_fixture_cd_add,logistic_regression,50,0.22,0.26666666666666666,0.32,0.2909090909090909,0.16319999999999998,72.0,0.3902683407068253
+synthetic_fixture,procedurally_generated_sine_noise_fixture,synthetic_fixture_cd_add,random_forest,50,0.32,0.2,0.12,0.15,0.2096,72.0,0.5545555555555557
+synthetic_fixture,procedurally_generated_sine_noise_fixture,synthetic_fixture_cd_add,spectrogram_cnn,50,0.24,0.27586206896551724,0.32,0.2962962962962963,0.14880000000000002,72.0,0.4603703245520592

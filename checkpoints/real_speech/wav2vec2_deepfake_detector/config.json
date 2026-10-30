@@ -1,0 +1,13 @@
+{
+  "sample_rate": 16000,
+  "n_mels": 128,
+  "n_fft": 1024,
+  "hop_length": 512,
+  "duration": 4,
+  "batch_size": 64,
+  "num_epochs": 25,
+  "learning_rate": 0.0001,
+  "num_workers": 2,
+  "max_samples_per_dataset": 20000,
+  "weight_decay": 0.01
+}

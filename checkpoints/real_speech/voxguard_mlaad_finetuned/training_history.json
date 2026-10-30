@@ -1,0 +1,60 @@
+{
+  "best_epoch": 1,
+  "best_dev_loss": 0.7689,
+  "best_dev_accuracy": 0.5433,
+  "best_dev_eer": 0.39,
+  "total_epochs_trained": 4,
+  "total_training_time_sec": 912.17,
+  "hyperparameters": {
+    "learning_rate": 5e-05,
+    "weight_decay": 0.01,
+    "batch_size": 2,
+    "freeze_mode": "backbone",
+    "seed": 42,
+    "early_stopping_patience": 3
+  },
+  "history": {
+    "epoch": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "train_loss": [
+      0.7928,
+      0.7474,
+      0.7003,
+      0.6874
+    ],
+    "train_acc": [
+      0.5679,
+      0.5614,
+      0.5957,
+      0.5993
+    ],
+    "dev_loss": [
+      0.7689,
+      0.827,
+      0.9352,
+      0.7985
+    ],
+    "dev_acc": [
+      0.5433,
+      0.5467,
+      0.53,
+      0.5267
+    ],
+    "dev_eer": [
+      0.39,
+      0.3367,
+      0.38,
+      0.3867
+    ],
+    "ram_used_gb": [
+      15.05,
+      14.77,
+      14.07,
+      14.08
+    ]
+  }
+}

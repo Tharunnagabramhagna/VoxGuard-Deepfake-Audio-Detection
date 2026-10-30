@@ -1,0 +1,668 @@
+{
+  "checkpoint": "checkpoints/real_speech/wav2vec2_deepfake_detector/pytorch_model.pth",
+  "evaluation_timestamp": "2026-10-31 01:37:27",
+  "dev_tuning": {
+    "dev_manifest": "data/manifests/mlaad_dev.json",
+    "default_threshold": 0.5,
+    "dev_eer": 0.4033,
+    "optimal_threshold_from_dev": 0.0758,
+    "dev_accuracy_default": 0.5233,
+    "dev_accuracy_tuned": 0.5933
+  },
+  "test_evaluation_default_threshold": {
+    "threshold_used": 0.5,
+    "sample_count": 300,
+    "accuracy": 0.5867,
+    "precision": 0.9333,
+    "recall": 0.1867,
+    "f1_score": 0.3111,
+    "roc_auc": 0.6958,
+    "eer": 0.3533,
+    "eer_threshold": 0.0791,
+    "confusion_matrix": {
+      "tn": 148,
+      "fp": 2,
+      "fn": 122,
+      "tp": 28,
+      "labels": [
+        "0: Bonafide",
+        "1: Spoof"
+      ]
+    },
+    "status_breakdown": {
+      "human": {
+        "total": 150,
+        "correct": 148,
+        "accuracy": 0.9867,
+        "mean_prob_fake": 0.0956
+      },
+      "seen_generator": {
+        "total": 75,
+        "correct": 13,
+        "accuracy": 0.1733,
+        "mean_prob_fake": 0.2355
+      },
+      "unseen_generator": {
+        "total": 75,
+        "correct": 15,
+        "accuracy": 0.2,
+        "mean_prob_fake": 0.2596
+      }
+    },
+    "per_generator": {
+      "human_bonafide": {
+        "system_id": "human_bonafide",
+        "generator_status": "human",
+        "ground_truth": 0,
+        "total_samples": 150,
+        "correct_predictions": 148,
+        "accuracy": 0.9867,
+        "mean_prob_fake": 0.0956
+      },
+      "Edge-TTS": {
+        "system_id": "Edge-TTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "total_samples": 15,
+        "correct_predictions": 7,
+        "accuracy": 0.4667,
+        "mean_prob_fake": 0.4401
+      },
+      "FishTTS": {
+        "system_id": "FishTTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "total_samples": 15,
+        "correct_predictions": 0,
+        "accuracy": 0.0,
+        "mean_prob_fake": 0.0572
+      },
+      "Chatterbox": {
+        "system_id": "Chatterbox",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "total_samples": 15,
+        "correct_predictions": 0,
+        "accuracy": 0.0,
+        "mean_prob_fake": 0.1159
+      },
+      "DeepGram": {
+        "system_id": "DeepGram",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "total_samples": 15,
+        "correct_predictions": 4,
+        "accuracy": 0.2667,
+        "mean_prob_fake": 0.3252
+      },
+      "ZipVoice": {
+        "system_id": "ZipVoice",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "total_samples": 15,
+        "correct_predictions": 2,
+        "accuracy": 0.1333,
+        "mean_prob_fake": 0.2389
+      },
+      "Cartesia.ai (Sonic-3)": {
+        "system_id": "Cartesia.ai (Sonic-3)",
+        "generator_status": "unseen_generator",
+        "ground_truth": 1,
+        "total_samples": 25,
+        "correct_predictions": 5,
+        "accuracy": 0.2,
+        "mean_prob_fake": 0.2271
+      },
+      "Mars5": {
+        "system_id": "Mars5",
+        "generator_status": "unseen_generator",
+        "ground_truth": 1,
+        "total_samples": 25,
+        "correct_predictions": 0,
+        "accuracy": 0.0,
+        "mean_prob_fake": 0.1085
+      },
+      "MatchaTTS": {
+        "system_id": "MatchaTTS",
+        "generator_status": "unseen_generator",
+        "ground_truth": 1,
+        "total_samples": 25,
+        "correct_predictions": 10,
+        "accuracy": 0.4,
+        "mean_prob_fake": 0.4433
+      }
+    },
+    "latency_ms": {
+      "mean": 177.06,
+      "min": 104.09,
+      "max": 559.78,
+      "p95": 311.09
+    },
+    "false_positive_count": 2,
+    "false_negative_count": 122,
+    "false_positive_samples": [
+      {
+        "utterance_id": "MLAAD_TE_GEN_0094",
+        "system_id": "human_bonafide",
+        "generator_status": "human",
+        "ground_truth": 0,
+        "predicted": 1,
+        "prob_fake": 0.5204744935035706,
+        "raw_logit": 0.0819438099861145,
+        "inference_ms": 152.1735999995144,
+        "error_type": "false_positive",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\original\\en\\poisoned_pen_04_f000203.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_GEN_0134",
+        "system_id": "human_bonafide",
+        "generator_status": "human",
+        "ground_truth": 0,
+        "predicted": 1,
+        "prob_fake": 0.6980366110801697,
+        "raw_logit": 0.8379656076431274,
+        "inference_ms": 127.63200000335928,
+        "error_type": "false_positive",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\original\\en\\poisoned_pen_05_f000220.wav"
+      }
+    ],
+    "false_negative_samples": [
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0001",
+        "system_id": "Edge-TTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.3192084729671478,
+        "raw_logit": -0.7574117183685303,
+        "inference_ms": 136.7784999893047,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\Edge-TTS\\the_master_key_10_f000147.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0005",
+        "system_id": "Edge-TTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.16765320301055908,
+        "raw_logit": -1.6023515462875366,
+        "inference_ms": 239.78540000098292,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\Edge-TTS\\the_sea_fairies_07_f000142.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0007",
+        "system_id": "Edge-TTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.08169488608837128,
+        "raw_logit": -2.4195382595062256,
+        "inference_ms": 165.33590000472032,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\Edge-TTS\\the_sea_fairies_17_f000106.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0008",
+        "system_id": "Edge-TTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.16048383712768555,
+        "raw_logit": -1.6546324491500854,
+        "inference_ms": 147.18660000653472,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\Edge-TTS\\wives_and_daughters_07_f000042.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0009",
+        "system_id": "Edge-TTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.07906652987003326,
+        "raw_logit": -2.4550981521606445,
+        "inference_ms": 146.91450000100303,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\Edge-TTS\\wives_and_daughters_14_f000275.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0011",
+        "system_id": "Edge-TTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.10185887664556503,
+        "raw_logit": -2.176738977432251,
+        "inference_ms": 145.97719999437686,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\Edge-TTS\\wives_and_daughters_19_f000005.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0012",
+        "system_id": "Edge-TTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.23896025121212006,
+        "raw_logit": -1.158388376235962,
+        "inference_ms": 138.60579999163747,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\Edge-TTS\\wives_and_daughters_20_f000050.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0013",
+        "system_id": "Edge-TTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.19504903256893158,
+        "raw_logit": -1.4175304174423218,
+        "inference_ms": 108.54220000328496,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\Edge-TTS\\wives_and_daughters_20_f000144.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0016",
+        "system_id": "FishTTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.048130907118320465,
+        "raw_logit": -2.9845030307769775,
+        "inference_ms": 119.45889999333303,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\FishTTS\\the_sea_fairies_06_f000022.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0017",
+        "system_id": "FishTTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.06276176124811172,
+        "raw_logit": -2.7035915851593018,
+        "inference_ms": 127.35339999198914,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\FishTTS\\the_sea_fairies_07_f000102.wav"
+      }
+    ]
+  },
+  "test_evaluation_dev_calibrated_threshold": {
+    "threshold_used": 0.0758,
+    "sample_count": 300,
+    "accuracy": 0.6333,
+    "precision": 0.6235,
+    "recall": 0.6733,
+    "f1_score": 0.6474,
+    "roc_auc": 0.6958,
+    "eer": 0.3533,
+    "eer_threshold": 0.0791,
+    "confusion_matrix": {
+      "tn": 89,
+      "fp": 61,
+      "fn": 49,
+      "tp": 101,
+      "labels": [
+        "0: Bonafide",
+        "1: Spoof"
+      ]
+    },
+    "status_breakdown": {
+      "human": {
+        "total": 150,
+        "correct": 89,
+        "accuracy": 0.5933,
+        "mean_prob_fake": 0.0956
+      },
+      "seen_generator": {
+        "total": 75,
+        "correct": 48,
+        "accuracy": 0.64,
+        "mean_prob_fake": 0.2355
+      },
+      "unseen_generator": {
+        "total": 75,
+        "correct": 53,
+        "accuracy": 0.7067,
+        "mean_prob_fake": 0.2596
+      }
+    },
+    "per_generator": {
+      "human_bonafide": {
+        "system_id": "human_bonafide",
+        "generator_status": "human",
+        "ground_truth": 0,
+        "total_samples": 150,
+        "correct_predictions": 89,
+        "accuracy": 0.5933,
+        "mean_prob_fake": 0.0956
+      },
+      "Edge-TTS": {
+        "system_id": "Edge-TTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "total_samples": 15,
+        "correct_predictions": 15,
+        "accuracy": 1.0,
+        "mean_prob_fake": 0.4401
+      },
+      "FishTTS": {
+        "system_id": "FishTTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "total_samples": 15,
+        "correct_predictions": 2,
+        "accuracy": 0.1333,
+        "mean_prob_fake": 0.0572
+      },
+      "Chatterbox": {
+        "system_id": "Chatterbox",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "total_samples": 15,
+        "correct_predictions": 8,
+        "accuracy": 0.5333,
+        "mean_prob_fake": 0.1159
+      },
+      "DeepGram": {
+        "system_id": "DeepGram",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "total_samples": 15,
+        "correct_predictions": 13,
+        "accuracy": 0.8667,
+        "mean_prob_fake": 0.3252
+      },
+      "ZipVoice": {
+        "system_id": "ZipVoice",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "total_samples": 15,
+        "correct_predictions": 10,
+        "accuracy": 0.6667,
+        "mean_prob_fake": 0.2389
+      },
+      "Cartesia.ai (Sonic-3)": {
+        "system_id": "Cartesia.ai (Sonic-3)",
+        "generator_status": "unseen_generator",
+        "ground_truth": 1,
+        "total_samples": 25,
+        "correct_predictions": 18,
+        "accuracy": 0.72,
+        "mean_prob_fake": 0.2271
+      },
+      "Mars5": {
+        "system_id": "Mars5",
+        "generator_status": "unseen_generator",
+        "ground_truth": 1,
+        "total_samples": 25,
+        "correct_predictions": 12,
+        "accuracy": 0.48,
+        "mean_prob_fake": 0.1085
+      },
+      "MatchaTTS": {
+        "system_id": "MatchaTTS",
+        "generator_status": "unseen_generator",
+        "ground_truth": 1,
+        "total_samples": 25,
+        "correct_predictions": 23,
+        "accuracy": 0.92,
+        "mean_prob_fake": 0.4433
+      }
+    },
+    "latency_ms": {
+      "mean": 169.05,
+      "min": 101.47,
+      "max": 832.25,
+      "p95": 264.1
+    },
+    "false_positive_count": 61,
+    "false_negative_count": 49,
+    "false_positive_samples": [
+      {
+        "utterance_id": "MLAAD_TE_GEN_0001",
+        "system_id": "human_bonafide",
+        "generator_status": "human",
+        "ground_truth": 0,
+        "predicted": 1,
+        "prob_fake": 0.08404150605201721,
+        "raw_logit": -2.388660192489624,
+        "inference_ms": 101.46770000574179,
+        "error_type": "false_positive",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\original\\en\\poisoned_pen_01_f000004.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_GEN_0003",
+        "system_id": "human_bonafide",
+        "generator_status": "human",
+        "ground_truth": 0,
+        "predicted": 1,
+        "prob_fake": 0.11702024191617966,
+        "raw_logit": -2.0209553241729736,
+        "inference_ms": 116.49929999839514,
+        "error_type": "false_positive",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\original\\en\\poisoned_pen_01_f000067.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_GEN_0011",
+        "system_id": "human_bonafide",
+        "generator_status": "human",
+        "ground_truth": 0,
+        "predicted": 1,
+        "prob_fake": 0.08179082721471786,
+        "raw_logit": -2.418260097503662,
+        "inference_ms": 118.06609999621287,
+        "error_type": "false_positive",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\original\\en\\poisoned_pen_01_f000192.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_GEN_0012",
+        "system_id": "human_bonafide",
+        "generator_status": "human",
+        "ground_truth": 0,
+        "predicted": 1,
+        "prob_fake": 0.09470102190971375,
+        "raw_logit": -2.257540464401245,
+        "inference_ms": 127.40380001196172,
+        "error_type": "false_positive",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\original\\en\\poisoned_pen_01_f000213.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_GEN_0015",
+        "system_id": "human_bonafide",
+        "generator_status": "human",
+        "ground_truth": 0,
+        "predicted": 1,
+        "prob_fake": 0.07600446790456772,
+        "raw_logit": -2.497915029525757,
+        "inference_ms": 166.03049999685027,
+        "error_type": "false_positive",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\original\\en\\poisoned_pen_01_f000235.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_GEN_0016",
+        "system_id": "human_bonafide",
+        "generator_status": "human",
+        "ground_truth": 0,
+        "predicted": 1,
+        "prob_fake": 0.10681699961423874,
+        "raw_logit": -2.1236743927001953,
+        "inference_ms": 155.8495000062976,
+        "error_type": "false_positive",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\original\\en\\poisoned_pen_01_f000241.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_GEN_0038",
+        "system_id": "human_bonafide",
+        "generator_status": "human",
+        "ground_truth": 0,
+        "predicted": 1,
+        "prob_fake": 0.07693636417388916,
+        "raw_logit": -2.4847195148468018,
+        "inference_ms": 179.16200000036042,
+        "error_type": "false_positive",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\original\\en\\poisoned_pen_02_f000245.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_GEN_0042",
+        "system_id": "human_bonafide",
+        "generator_status": "human",
+        "ground_truth": 0,
+        "predicted": 1,
+        "prob_fake": 0.08137845247983932,
+        "raw_logit": -2.4237637519836426,
+        "inference_ms": 139.39060000120662,
+        "error_type": "false_positive",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\original\\en\\poisoned_pen_02_f000304.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_GEN_0043",
+        "system_id": "human_bonafide",
+        "generator_status": "human",
+        "ground_truth": 0,
+        "predicted": 1,
+        "prob_fake": 0.11421722173690796,
+        "raw_logit": -2.0483696460723877,
+        "inference_ms": 110.79180000524502,
+        "error_type": "false_positive",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\original\\en\\poisoned_pen_02_f000314.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_GEN_0046",
+        "system_id": "human_bonafide",
+        "generator_status": "human",
+        "ground_truth": 0,
+        "predicted": 1,
+        "prob_fake": 0.1649601310491562,
+        "raw_logit": -1.6217756271362305,
+        "inference_ms": 165.86029999598395,
+        "error_type": "false_positive",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\original\\en\\poisoned_pen_03_f000009.wav"
+      }
+    ],
+    "false_negative_samples": [
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0016",
+        "system_id": "FishTTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.048130907118320465,
+        "raw_logit": -2.9845030307769775,
+        "inference_ms": 145.76669999223668,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\FishTTS\\the_sea_fairies_06_f000022.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0017",
+        "system_id": "FishTTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.06276176124811172,
+        "raw_logit": -2.7035915851593018,
+        "inference_ms": 163.95409998949617,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\FishTTS\\the_sea_fairies_07_f000102.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0018",
+        "system_id": "FishTTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.04730904847383499,
+        "raw_logit": -3.002588987350464,
+        "inference_ms": 120.81019999459386,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\FishTTS\\the_sea_fairies_09_f000097.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0019",
+        "system_id": "FishTTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.05055086687207222,
+        "raw_logit": -2.9329018592834473,
+        "inference_ms": 128.73749999562278,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\FishTTS\\the_sea_fairies_11_f000012.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0021",
+        "system_id": "FishTTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.057039037346839905,
+        "raw_logit": -2.8052890300750732,
+        "inference_ms": 119.2765000014333,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\FishTTS\\wives_and_daughters_02_f000328.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0022",
+        "system_id": "FishTTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.05156703665852547,
+        "raw_logit": -2.911928415298462,
+        "inference_ms": 114.9505999928806,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\FishTTS\\wives_and_daughters_03_f000147.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0023",
+        "system_id": "FishTTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.04543626680970192,
+        "raw_logit": -3.0449438095092773,
+        "inference_ms": 137.4387999967439,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\FishTTS\\wives_and_daughters_04_f000080.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0025",
+        "system_id": "FishTTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.06422436982393265,
+        "raw_logit": -2.678992986679077,
+        "inference_ms": 126.62789999740198,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\FishTTS\\wives_and_daughters_05_f000035.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0026",
+        "system_id": "FishTTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.05226883664727211,
+        "raw_logit": -2.8976705074310303,
+        "inference_ms": 134.6077000052901,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\FishTTS\\wives_and_daughters_05_f000220.wav"
+      },
+      {
+        "utterance_id": "MLAAD_TE_SPOOF_0027",
+        "system_id": "FishTTS",
+        "generator_status": "seen_generator",
+        "ground_truth": 1,
+        "predicted": 0,
+        "prob_fake": 0.04713050648570061,
+        "raw_logit": -3.0065574645996094,
+        "inference_ms": 124.29720000363886,
+        "error_type": "false_negative",
+        "local_path": "C:\\Users\\tarun\\.cache\\huggingface\\hub\\datasets--mueller91--MLAAD-tiny\\snapshots\\9143e5ea709575ebab6bec52840a1043aada7bb1\\fake\\en\\FishTTS\\wives_and_daughters_06_f000123.wav"
+      }
+    ]
+  }
+}

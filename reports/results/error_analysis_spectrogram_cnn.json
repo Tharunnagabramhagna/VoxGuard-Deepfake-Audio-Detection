@@ -1,0 +1,132 @@
+{
+  "threshold": 0.4603703245520592,
+  "total_samples": 30,
+  "total_false_positives": 6,
+  "total_false_negatives": 15,
+  "false_positive_rate": 0.6,
+  "false_negative_rate": 0.75,
+  "top_false_positives": [
+    {
+      "utterance_id": "LA_E_0000070",
+      "speaker_id": "LA_0005",
+      "system_id": "-",
+      "label": 0,
+      "label_str": "bonafide",
+      "prediction": 1,
+      "pred_label": "spoof",
+      "score_spoof": 0.4676048457622528,
+      "score_bonafide": 0.5323951542377472
+    },
+    {
+      "utterance_id": "LA_E_0000061",
+      "speaker_id": "LA_0004",
+      "system_id": "-",
+      "label": 0,
+      "label_str": "bonafide",
+      "prediction": 1,
+      "pred_label": "spoof",
+      "score_spoof": 0.4667776823043823,
+      "score_bonafide": 0.5332223176956177
+    },
+    {
+      "utterance_id": "LA_E_0000066",
+      "speaker_id": "LA_0005",
+      "system_id": "-",
+      "label": 0,
+      "label_str": "bonafide",
+      "prediction": 1,
+      "pred_label": "spoof",
+      "score_spoof": 0.4626096785068512,
+      "score_bonafide": 0.5373903214931488
+    },
+    {
+      "utterance_id": "LA_E_0000067",
+      "speaker_id": "LA_0004",
+      "system_id": "-",
+      "label": 0,
+      "label_str": "bonafide",
+      "prediction": 1,
+      "pred_label": "spoof",
+      "score_spoof": 0.46255654096603394,
+      "score_bonafide": 0.5374434590339661
+    },
+    {
+      "utterance_id": "LA_E_0000068",
+      "speaker_id": "LA_0005",
+      "system_id": "-",
+      "label": 0,
+      "label_str": "bonafide",
+      "prediction": 1,
+      "pred_label": "spoof",
+      "score_spoof": 0.462117463350296,
+      "score_bonafide": 0.537882536649704
+    }
+  ],
+  "top_false_negatives": [
+    {
+      "utterance_id": "LA_E_0000076",
+      "speaker_id": "LA_0005",
+      "system_id": "A08",
+      "label": 1,
+      "label_str": "spoof",
+      "prediction": 0,
+      "pred_label": "bonafide",
+      "score_spoof": 0.4451664388179779,
+      "score_bonafide": 0.5548335611820221
+    },
+    {
+      "utterance_id": "LA_E_0000080",
+      "speaker_id": "LA_0005",
+      "system_id": "A08",
+      "label": 1,
+      "label_str": "spoof",
+      "prediction": 0,
+      "pred_label": "bonafide",
+      "score_spoof": 0.44554319977760315,
+      "score_bonafide": 0.5544568002223969
+    },
+    {
+      "utterance_id": "LA_E_0000086",
+      "speaker_id": "LA_0005",
+      "system_id": "A10",
+      "label": 1,
+      "label_str": "spoof",
+      "prediction": 0,
+      "pred_label": "bonafide",
+      "score_spoof": 0.4469206929206848,
+      "score_bonafide": 0.5530793070793152
+    },
+    {
+      "utterance_id": "LA_E_0000079",
+      "speaker_id": "LA_0004",
+      "system_id": "A07",
+      "label": 1,
+      "label_str": "spoof",
+      "prediction": 0,
+      "pred_label": "bonafide",
+      "score_spoof": 0.44873034954071045,
+      "score_bonafide": 0.5512696504592896
+    },
+    {
+      "utterance_id": "LA_E_0000083",
+      "speaker_id": "LA_0004",
+      "system_id": "A07",
+      "label": 1,
+      "label_str": "spoof",
+      "prediction": 0,
+      "pred_label": "bonafide",
+      "score_spoof": 0.4487687349319458,
+      "score_bonafide": 0.5512312650680542
+    }
+  ],
+  "fp_speaker_breakdown": {
+    "LA_0005": 4,
+    "LA_0004": 2
+  },
+  "fn_system_breakdown": {
+    "A07": 5,
+    "A08": 4,
+    "A09": 4,
+    "A10": 2
+  }
+}

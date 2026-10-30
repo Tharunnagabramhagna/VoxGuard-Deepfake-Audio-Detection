@@ -1,0 +1,130 @@
+# ==============================================================================
+# VoxGuard Default Configuration
+# ==============================================================================
+
+# Global reproducibility seed
+seed: 42
+
+# Operating dataset mode: 'synthetic_fixture' (software test harness) or 'real_speech' (speech research)
+dataset_mode: "synthetic_fixture"
+
+# Project filesystem paths
+paths:
+  raw_asvspoof_dir: "data/raw/asvspoof2019_la"
+  raw_cd_add_dir: "data/raw/cd_add"
+  manifest_dir: "data/manifests"
+  processed_dir: "data/processed"
+  checkpoint_dir: "checkpoints"
+  checkpoint_fixture_dir: "checkpoints/fixture"
+  checkpoint_real_speech_dir: "checkpoints/real_speech"
+  results_dir: "reports/results"
+  figures_dir: "reports/figures"
+
+# Audio preprocessing specifications
+audio:
+  sample_rate: 16000
+  duration_sec: 4.0
+  target_samples: 64000            # sample_rate * duration_sec
+  channels: 1                     # Mono conversion
+  pad_mode: "repeat"              # 'repeat' or 'zero' for utterances shorter than target
+  trim_silence: true
+  silence_top_db: 30
+  normalize_loudness: true
+
+# Acoustic feature extraction representations
+features:
+  # Representation 1: Log-Mel Spectrogram (2D matrix for Deep Learning)
+  mel:
+    n_fft: 1024
+    win_length: 400               # 25 ms window at 16 kHz
+    hop_length: 160               # 10 ms hop at 16 kHz (produces 401 time frames for 4.0s)
+    n_mels: 64                    # Configurable Mel-bin count, initially 64
+    f_min: 20.0
+    f_max: 8000.0                 # Nyquist limit for 16 kHz
+    power: 2.0
+    log_offset: 1.0e-6
+
+  # Representation 2: Summary MFCC statistics (1D vector for Traditional ML)
+  mfcc:
+    n_mfcc: 40                    # Extract 40 MFCC coefficients
+    n_fft: 1024
+    win_length: 400
+    hop_length: 160
+    include_deltas: false          # When false: 40 mean + 40 std = 80 features; when true: + 40 delta_mean + 40 delta_std = 160 features
+    summary_stats: ["mean", "std"]
+
+# Class labeling convention:
+# 0 = genuine (bonafide human speech)
+# 1 = synthetic (spoof / deepfake speech)
+labels:
+  bonafide: 0
+  spoof: 1
+
+# Model hyperparameters
+models:
+  # Baseline 1: Logistic Regression
+  logistic_regression:
+    penalty: "l2"
+    C: 1.0
+    solver: "lbfgs"
+    max_iter: 1000
+    class_weight: "balanced"      # Adjust for ASVspoof ~9:1 spoof:bonafide imbalance
+
+  # Baseline 2: Balanced Random Forest
+  random_forest:
+    n_estimators: 150
+    max_depth: 18
+    min_samples_split: 4
+    min_samples_leaf: 2
+    class_weight: "balanced"
+    n_jobs: -1
+
+  # Deep Learning: 2D Spectrogram-CNN
+  cnn:
+    in_channels: 1
+    conv_channels: [32, 64, 128, 256]
+    kernel_size: 3
+    dense_dim: 128
+    dropout: 0.3
+    batch_size: 32
+    learning_rate: 0.0005
+    weight_decay: 0.0001
+    epochs: 25
+    early_stopping_patience: 5
+    loss_weight_spoof: 0.5        # Adjusted dynamically from training class frequencies
+
+  # Alternative Deep Architecture: BiLSTM with Temporal Attention
+  bilstm:
+    input_dim: 80                 # n_mels
+    hidden_dim: 64
+    num_layers: 2
+    bidirectional: true
+    dropout: 0.3
+    dense_dim: 64
+    batch_size: 32
+    learning_rate: 0.0005
+    weight_decay: 0.0001
+    epochs: 25
+    early_stopping_patience: 5
+
+# Robustness & Stress Testing
+robustness:
+  awgn_snr_db: [30, 20, 10, 0]
+  compression_bitrates_kbps: [128, 64, 32]
+
+# External Evaluation (CD-ADD)
+# NOTE: Must remain held-out test only. Never used for training or threshold tuning.
+external_eval:
+  cd_add:
+    dataset_name: "SpeechAntiSpoofingBenchmarks/CD-ADD"
+    split: "test"
+    trust_remote_code: false      # Strict security policy: never run arbitrary remote code
+    max_samples: 2000             # Representative sample size for benchmark evaluation
+
+# Interactive Prediction Demonstration
+demo:
+  host: "127.0.0.1"
+  port: 8501
+  default_model: "cnn"
+  classification_threshold: 0.50
+

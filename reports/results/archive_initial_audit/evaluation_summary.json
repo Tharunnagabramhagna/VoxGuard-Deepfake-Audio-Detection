@@ -1,0 +1,456 @@
+{
+  "metadata": {
+    "subset": "mini",
+    "seed": 42,
+    "device": "cpu",
+    "codec_status": {
+      "mulaw_g711": true,
+      "mp3": false,
+      "aac": false,
+      "ffmpeg_available": false,
+      "ffmpeg_path": null,
+      "mp3_aac_status": "BLOCKED",
+      "blocked_reason": "ffmpeg not found on system PATH; MP3/AAC encoding is blocked."
+    }
+  },
+  "thresholds_calibrated_on_dev": {
+    "logistic_regression": 0.3902683407068253,
+    "random_forest": 0.5545555555555556,
+    "spectrogram_cnn": 0.4603703245520592
+  },
+  "development_metrics": {
+    "logistic_regression": {
+      "accuracy": 0.16666666666666666,
+      "precision": 0.2727272727272727,
+      "recall": 0.15,
+      "f1": 0.1935483870967742,
+      "roc_auc": 0.06,
+      "eer": 0.85,
+      "eer_percent": 85.0,
+      "eer_threshold": 0.3902683407068253,
+      "operating_threshold": 0.3902683407068253,
+      "confusion_matrix": {
+        "tn": 2,
+        "fp": 8,
+        "fn": 17,
+        "tp": 3,
+        "matrix": [
+          [
+            2,
+            8
+          ],
+          [
+            17,
+            3
+          ]
+        ]
+      },
+      "far": 0.8,
+      "frr": 0.85,
+      "n_samples": 30,
+      "n_bonafide": 10,
+      "n_spoof": 20,
+      "positive_class": "spoof (label 1)"
+    },
+    "random_forest": {
+      "accuracy": 0.16666666666666666,
+      "precision": 0.2727272727272727,
+      "recall": 0.15,
+      "f1": 0.1935483870967742,
+      "roc_auc": 0.15499999999999997,
+      "eer": 0.8,
+      "eer_percent": 80.0,
+      "eer_threshold": 0.5545555555555556,
+      "operating_threshold": 0.5545555555555556,
+      "confusion_matrix": {
+        "tn": 2,
+        "fp": 8,
+        "fn": 17,
+        "tp": 3,
+        "matrix": [
+          [
+            2,
+            8
+          ],
+          [
+            17,
+            3
+          ]
+        ]
+      },
+      "far": 0.8,
+      "frr": 0.85,
+      "n_samples": 30,
+      "n_bonafide": 10,
+      "n_spoof": 20,
+      "positive_class": "spoof (label 1)"
+    },
+    "spectrogram_cnn": {
+      "accuracy": 0.3,
+      "precision": 0.46153846153846156,
+      "recall": 0.3,
+      "f1": 0.36363636363636365,
+      "roc_auc": 0.33499999999999996,
+      "eer": 0.7,
+      "eer_percent": 70.0,
+      "eer_threshold": 0.4603703245520592,
+      "operating_threshold": 0.4603703245520592,
+      "confusion_matrix": {
+        "tn": 3,
+        "fp": 7,
+        "fn": 14,
+        "tp": 6,
+        "matrix": [
+          [
+            3,
+            7
+          ],
+          [
+            14,
+            6
+          ]
+        ]
+      },
+      "far": 0.7,
+      "frr": 0.7,
+      "n_samples": 30,
+      "n_bonafide": 10,
+      "n_spoof": 20,
+      "positive_class": "spoof (label 1)"
+    }
+  },
+  "internal_eval_metrics": {
+    "logistic_regression": {
+      "accuracy": 0.26666666666666666,
+      "precision": 0.4375,
+      "recall": 0.35,
+      "f1": 0.3888888888888889,
+      "roc_auc": 0.11499999999999999,
+      "eer": 0.85,
+      "eer_percent": 85.0,
+      "eer_threshold": 0.5232656598091125,
+      "operating_threshold": 0.3902683407068253,
+      "confusion_matrix": {
+        "tn": 1,
+        "fp": 9,
+        "fn": 13,
+        "tp": 7,
+        "matrix": [
+          [
+            1,
+            9
+          ],
+          [
+            13,
+            7
+          ]
+        ]
+      },
+      "far": 0.9,
+      "frr": 0.65,
+      "n_samples": 30,
+      "n_bonafide": 10,
+      "n_spoof": 20,
+      "positive_class": "spoof (label 1)"
+    },
+    "random_forest": {
+      "accuracy": 0.16666666666666666,
+      "precision": 0.2727272727272727,
+      "recall": 0.15,
+      "f1": 0.1935483870967742,
+      "roc_auc": 0.14499999999999996,
+      "eer": 0.8,
+      "eer_percent": 80.0,
+      "eer_threshold": 0.5514444444444444,
+      "operating_threshold": 0.5545555555555556,
+      "confusion_matrix": {
+        "tn": 2,
+        "fp": 8,
+        "fn": 17,
+        "tp": 3,
+        "matrix": [
+          [
+            2,
+            8
+          ],
+          [
+            17,
+            3
+          ]
+        ]
+      },
+      "far": 0.8,
+      "frr": 0.85,
+      "n_samples": 30,
+      "n_bonafide": 10,
+      "n_spoof": 20,
+      "positive_class": "spoof (label 1)"
+    },
+    "spectrogram_cnn": {
+      "accuracy": 0.3,
+      "precision": 0.45454545454545453,
+      "recall": 0.25,
+      "f1": 0.3225806451612903,
+      "roc_auc": 0.285,
+      "eer": 0.65,
+      "eer_percent": 65.0,
+      "eer_threshold": 0.45945961276690167,
+      "operating_threshold": 0.4603703245520592,
+      "confusion_matrix": {
+        "tn": 4,
+        "fp": 6,
+        "fn": 15,
+        "tp": 5,
+        "matrix": [
+          [
+            4,
+            6
+          ],
+          [
+            15,
+            5
+          ]
+        ]
+      },
+      "far": 0.6,
+      "frr": 0.75,
+      "n_samples": 30,
+      "n_bonafide": 10,
+      "n_spoof": 20,
+      "positive_class": "spoof (label 1)"
+    }
+  },
+  "external_cd_add_metrics": {
+    "logistic_regression": {
+      "accuracy": 0.22,
+      "precision": 0.26666666666666666,
+      "recall": 0.32,
+      "f1": 0.2909090909090909,
+      "roc_auc": 0.16319999999999998,
+      "eer": 0.72,
+      "eer_percent": 72.0,
+      "eer_threshold": 0.5876410007476807,
+      "operating_threshold": 0.3902683407068253,
+      "confusion_matrix": {
+        "tn": 3,
+        "fp": 22,
+        "fn": 17,
+        "tp": 8,
+        "matrix": [
+          [
+            3,
+            22
+          ],
+          [
+            17,
+            8
+          ]
+        ]
+      },
+      "far": 0.88,
+      "frr": 0.68,
+      "n_samples": 50,
+      "n_bonafide": 25,
+      "n_spoof": 25,
+      "positive_class": "spoof (label 1)"
+    },
+    "random_forest": {
+      "accuracy": 0.32,
+      "precision": 0.2,
+      "recall": 0.12,
+      "f1": 0.15,
+      "roc_auc": 0.2096,
+      "eer": 0.72,
+      "eer_percent": 72.0,
+      "eer_threshold": 0.47703174603174603,
+      "operating_threshold": 0.5545555555555556,
+      "confusion_matrix": {
+        "tn": 13,
+        "fp": 12,
+        "fn": 22,
+        "tp": 3,
+        "matrix": [
+          [
+            13,
+            12
+          ],
+          [
+            22,
+            3
+          ]
+        ]
+      },
+      "far": 0.48,
+      "frr": 0.88,
+      "n_samples": 50,
+      "n_bonafide": 25,
+      "n_spoof": 25,
+      "positive_class": "spoof (label 1)"
+    },
+    "spectrogram_cnn": {
+      "accuracy": 0.24,
+      "precision": 0.27586206896551724,
+      "recall": 0.32,
+      "f1": 0.2962962962962963,
+      "roc_auc": 0.14880000000000002,
+      "eer": 0.72,
+      "eer_percent": 72.0,
+      "eer_threshold": 0.46167945861816406,
+      "operating_threshold": 0.4603703245520592,
+      "confusion_matrix": {
+        "tn": 4,
+        "fp": 21,
+        "fn": 17,
+        "tp": 8,
+        "matrix": [
+          [
+            4,
+            21
+          ],
+          [
+            17,
+            8
+          ]
+        ]
+      },
+      "far": 0.84,
+      "frr": 0.68,
+      "n_samples": 50,
+      "n_bonafide": 25,
+      "n_spoof": 25,
+      "positive_class": "spoof (label 1)"
+    }
+  },
+  "robustness_sweep": {
+    "Clean": {
+      "logistic_regression": {
+        "accuracy": 0.26666666666666666,
+        "eer": 0.85
+      },
+      "random_forest": {
+        "accuracy": 0.16666666666666666,
+        "eer": 0.8
+      },
+      "spectrogram_cnn": {
+        "accuracy": 0.3,
+        "eer": 0.65
+      }
+    },
+    "30dB SNR": {
+      "logistic_regression": {
+        "accuracy": 0.5
+      },
+      "random_forest": {
+        "accuracy": 0.6
+      },
+      "spectrogram_cnn": {
+        "accuracy": 0.2
+      }
+    },
+    "20dB SNR": {
+      "logistic_regression": {
+        "accuracy": 0.8333333333333334
+      },
+      "random_forest": {
+        "accuracy": 0.9666666666666667
+      },
+      "spectrogram_cnn": {
+        "accuracy": 0.13333333333333333
+      }
+    },
+    "10dB SNR": {
+      "logistic_regression": {
+        "accuracy": 0.9666666666666667
+      },
+      "random_forest": {
+        "accuracy": 1.0
+      },
+      "spectrogram_cnn": {
+        "accuracy": 0.0
+      }
+    },
+    "0dB SNR": {
+      "logistic_regression": {
+        "accuracy": 1.0
+      },
+      "random_forest": {
+        "accuracy": 1.0
+      },
+      "spectrogram_cnn": {
+        "accuracy": 0.0
+      }
+    },
+    "G.711 mu-law (64kbps)": {
+      "logistic_regression": {
+        "accuracy": 0.3
+      },
+      "random_forest": {
+        "accuracy": 0.5
+      },
+      "spectrogram_cnn": {
+        "accuracy": 0.26666666666666666
+      }
+    }
+  },
+  "speaker_disjointness_audit": {
+    "n_train_speakers": 2,
+    "n_dev_speakers": 2,
+    "train_dev_leakage_count": 0,
+    "train_dev_leaked_speakers": [],
+    "is_train_dev_disjoint": true,
+    "n_eval_speakers": 2,
+    "train_eval_leakage_count": 0,
+    "train_eval_leaked_speakers": [],
+    "dev_eval_leakage_count": 0,
+    "dev_eval_leaked_speakers": [],
+    "is_all_disjoint": true
+  },
+  "system_id_breakdown_cnn": {
+    "-": {
+      "system_type": "bonafide",
+      "n_samples": 10,
+      "accuracy": 0.4,
+      "mean_score": 0.46033230423927307,
+      "std_score": 0.006409053690731525,
+      "error_rate": 0.6
+    },
+    "A07": {
+      "system_type": "spoof",
+      "n_samples": 5,
+      "accuracy": 0.0,
+      "mean_score": 0.4529930055141449,
+      "std_score": 0.005182415712624788,
+      "error_rate": 1.0
+    },
+    "A08": {
+      "system_type": "spoof",
+      "n_samples": 5,
+      "accuracy": 0.2,
+      "mean_score": 0.45244067907333374,
+      "std_score": 0.007921315729618073,
+      "error_rate": 0.8
+    },
+    "A09": {
+      "system_type": "spoof",
+      "n_samples": 5,
+      "accuracy": 0.2,
+      "mean_score": 0.4562431871891022,
+      "std_score": 0.005814899690449238,
+      "error_rate": 0.8
+    },
+    "A10": {
+      "system_type": "spoof",
+      "n_samples": 5,
+      "accuracy": 0.6,
+      "mean_score": 0.4568346440792084,
+      "std_score": 0.008222226984798908,
+      "error_rate": 0.4
+    }
+  },
+  "shortcut_correlation_cnn": {
+    "correlation_rms_energy": 0.0789,
+    "correlation_zero_crossing_rate": 0.0345,
+    "potential_rms_shortcut": false,
+    "potential_zcr_shortcut": false
+  }
+}
