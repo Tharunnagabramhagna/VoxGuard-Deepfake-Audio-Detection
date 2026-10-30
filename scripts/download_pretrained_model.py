@@ -50,3 +50,4 @@ def download_pretrained_model(force: bool = False):
 
 if __name__ == "__main__":
     download_pretrained_model()
+

@@ -143,3 +143,4 @@ For deterministic software validation on procedural fixtures ($N=30$ mini and $N
 | `checkpoints/fixture/best_spec_cnn.pt` | 2D Spectrogram-CNN | 4.85 MB | **YES** | Tracked in Git; procedural test fixture |
 | `checkpoints/fixture/logistic_regression.joblib` | Scikit-Learn Pipeline | 10.2 KB | **YES** | Tracked in Git |
 | `checkpoints/fixture/random_forest.joblib` | Scikit-Learn Ensemble | 161.4 KB | **YES** | Tracked in Git |
+

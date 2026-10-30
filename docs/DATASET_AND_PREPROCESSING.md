@@ -137,3 +137,4 @@ $$R(\tau) = \frac{\sum_{n} x[n] x[n+\tau]}{\sqrt{\sum_{n} x[n]^2 \sum_{n} x[n+\t
 - **Lag Range ($\tau$):** $[32, 320]$ samples at $16\text{ kHz}$, corresponding to the human glottal fundamental frequency range ($50\text{ Hz} - 500\text{ Hz}$).
 - **Metric ($R_{\text{max}}$):** Peak correlation within the human pitch range.
 - **Forensic Rule:** If an utterance falls in the decision boundary uncertainty band ($0.45 \le p \le 0.62$) but possesses $R_{\text{max}} \ge 0.35$, VoxGuard verifies physical vocal fold vibration, classifies the utterance as **Human Speech (Vocal Mimicry Detected)**, and scales the confidence to bonafide baseline.
+

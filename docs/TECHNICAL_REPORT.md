@@ -310,3 +310,4 @@ VoxGuard demonstrates that integrating parameter-efficient fine-tuning with biol
 4. **ASVspoof 2019:** Todisco et al., *ASVspoof 2019: Future Horizons in Spoofed and Fake Audio Detection*, Interspeech 2019.
 5. **HiFi-GAN:** Kong et al., *HiFi-GAN: Generative Adversarial Networks for Efficient and High Fidelity Speech Synthesis*, NeurIPS 2020.
 6. **Matcha-TTS:** Mehta et al., *Matcha-TTS: A fast TTS architecture with conditional flow matching*, ICASSP 2024.
+
